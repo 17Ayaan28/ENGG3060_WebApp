@@ -1,7 +1,7 @@
 from app import app
 import psycopg2
 import os
-from flask import render_template
+from flask import render_template, request
 from app import app
 
 DATABASE_URL = os.environ['DATABASE_URL']
@@ -41,13 +41,27 @@ def getPateintProgress():
     
     return render_template('getPatientProgress.html', leftCount=left_hand_count, sessionCount=session_date)
 
+@app.route('/sessions') 
+def showSessions():
     
-def getSession(sessionDate):
+    patient_id = request.args.get("patient_id", default="", type=str)
+    print(patient_id)
 
     cur = conn.cursor()
 
-    getSessions = """select * from sessions where session_date = %s """
+    getSessions = """select * from sessions where patient_id = %s """
 
-    cur.execute(getSessions, sessionDate)
+    cur.execute(getSessions, patient_id)
     record = cur.fetchall()
+
+    if record == None: 
+        print("The patient has no BBT sessions")
+        return
+
+    sessions = []
+    for rec in record:
+        sessions.append(rec[0])
+    
+    return render_template('showSessions.html', Sessions=sessions)
+
     
