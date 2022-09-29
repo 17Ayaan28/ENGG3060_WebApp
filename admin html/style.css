@@ -1,0 +1,92 @@
+/*====================GLOBAL STYLING===================*/
+/*import font*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  margin: 0;
+  background-color: white;
+}
+
+/*colour scheme*/
+:root {
+  --green: #64C195;
+  --dark-gray: #333333;
+  --light-gray: #999999;
+  --lighter-gray: #EFEFEF;
+}
+
+/*custom scrollbar*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+}
+
+/*headers*/
+h2 {
+  color: var(--light-gray);
+  font-size: 15px;
+  padding-top: 5px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+/*headers*/
+.logout {
+  height: 20px;
+  /*https://codepen.io/sosuke/pen/Pjoqqp*/
+  filter: invert(69%) sepia(43%) saturate(402%) hue-rotate(99deg) brightness(92%) contrast(84%);
+}
+
+.topnav {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+}
+
+/*box header*/
+.form-header {
+  color: var(--light-gray);
+  letter-spacing: 10px;
+  padding-top: 20px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*buttons for forms*/
+.form-button {
+  margin-top: 40px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: black;
+  background-color: white;
+  border-color: var(--light-gray);
+  border-radius: 2px;
+  border-width: 3px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  width: 300px;
+  height: 40px;
+}
+
+.form-button:hover {
+  border: none;
+  background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
+  box-shadow: 0px 15px 20px rgba(20, 172, 189, 0.3);
+  background-color: var(--green);
+  color: white;
+}
+
+.homepage {
+  display: grid;
+  justify-content: center;
+  padding-top: 50px;
+}
