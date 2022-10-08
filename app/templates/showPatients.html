@@ -4,8 +4,8 @@
         <title>Patient Progress</title>
     </head>
     <body>
-        {%for session in Sessions%}
-        <li><a href="/sessionperformance/{{session.id}}">{{session.session_datetime}}</li>
+        {%for patient in patient_list%}
+        <li><a href="/sessions/{{patient.id}}">{{patient.first_name}}</li>
         {%endfor%}
     </body>
 </html>
