@@ -8,14 +8,6 @@ from flask_login import UserMixin
 def load_user(id):
     return Clinician.query.get(int(id))
 
-class Admin(db.model):
-    __tablename__ = "admin"
-    id = db.Column(db.Integer, primary_key=True)
-    password_hash = db.Column(db.Text())
-
-    def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
-
 class Clinician(UserMixin, db.Model):
     __tablename__ = "clinicians"
     id = db.Column(db.Integer, primary_key=True)

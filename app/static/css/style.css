@@ -77,12 +77,63 @@ h2 {
   height: 40px;
 }
 
+#login_button {
+  position: absolute;
+  left: 22%;
+  top: 45%;
+
+}
+
+#form-container {
+  position: absolute;
+  left: 30%;
+  width: 40%;
+  height: 60%;
+  top: 17%;
+  color: #64C195;
+  border: #64C195;
+  border-radius: 10px;
+  border-style: solid;
+  height: 50%;
+}
+
+#first_name_field {
+  position: absolute;
+  top: 20%;
+  left: 12%;
+
+}
+
+#password_field {
+  position: absolute;
+  top: 31%; 
+  left: 13%;
+}
+
 .form-button:hover {
   border: none;
   background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
   box-shadow: 0px 15px 20px rgba(20, 172, 189, 0.3);
   background-color: var(--green);
   color: white;
+}
+
+#title {
+  position: absolute;
+  left: 30%;
+  top: 10%;
+}
+
+#patients_title {
+  position: absolute;
+  left: 2%;
+  color: #64C195;
+}
+
+#patient_list {
+  position: absolute;
+  top: 7%;
+  left: 2%;
 }
 
 .homepage {

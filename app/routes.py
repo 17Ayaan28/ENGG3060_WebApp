@@ -1,6 +1,7 @@
 from app import app
 import psycopg2
 import os
+from werkzeug.security import generate_password_hash
 from flask import render_template, request, flash, redirect, url_for
 from app import app
 from flask_login import current_user, login_user, logout_user, login_required
@@ -14,14 +15,15 @@ DATABASE_URL = "postgres://ogbfzoaaronfll:ecff3f409a340d77f10ac744e1a9bf17e8fc92
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 @app.route('/')
-@app.route('/index')
+@app.route('/home')
 def index():
-    return "Home"
+    print(generate_password_hash("password"))
+    return render_template('home.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('patients'))
+        return redirect(url_for('showPatients'))
     form = LoginForm()
     if form.validate_on_submit():
         user = Clinician.query.filter_by(first_name=form.first_name.data).first()
@@ -29,7 +31,7 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('patients'))
+        return redirect(url_for('showPatients'))
     return render_template('login.html', title='Sign In', form=form)
 
 @login_required
@@ -38,18 +40,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/adminlogin')
-def admin_login():
-    form = admin_LoginForm()
 
-    if form.validate_on_submit():
-        user = Clinician.query.filter_by(first_name=form.first_name.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password')
-            return redirect(url_for('adminlogin'))
-        login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('patients'))
-    return render_template('adminlogin.html', title='Sign In', form=form)
 
 @app.route('/createpatient')
 def createPatient():
@@ -57,6 +48,15 @@ def createPatient():
     patient = Patient(first_name=form.first_name.data,last_name=form.last_name.data,age=form.age.data,sex=form.sex.data)
     db.session.add(patient)
     db.session.commit()
+
+@app.route('/createclinician')
+def createClinician():
+    form = create_clinician()
+    hash = generate_password_hash(form.password.data)
+    clinician = Clinician(first_name=form.first_name.data,last_name=form.last_name.data,password_hash=hash)
+    db.session.add(clinician)
+    db.session.commit()
+
 
 @app.route('/patients')
 @login_required
@@ -68,7 +68,7 @@ def showPatients():
 @app.route('/sessions/<pid>') 
 def showSessions(pid):
 
-    sessions = Session.query.filter_by(patient_id=2)
+    sessions = Session.query.filter_by(patient_id=pid)
     return render_template('showSessions.html', Sessions=sessions)
 
 @app.route('/patientProgess/<pid>')
