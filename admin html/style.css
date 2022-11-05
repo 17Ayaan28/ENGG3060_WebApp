@@ -79,33 +79,58 @@ h3 {
 
 /*====================FORMS / INPUTS===================*/
 /*buttons for forms*/
+.homepage {
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
 .form-button {
-  margin-top: 40px;
   font-size: 15px;
   letter-spacing: 1px;
   color: black;
   background-color: white;
-  border-color: var(--light-gray);
   border-radius: 2px;
-  border-width: 3px;
+  border-width: 1.2px;
   transition: all 0.3s ease 0s;
   cursor: pointer;
-  width: 300px;
-  height: 40px;
 }
 
 .form-button:hover {
   border: none;
   background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
-  box-shadow: 0px 15px 20px rgba(20, 172, 189, 0.3);
+  box-shadow: 0px 5px 5px rgba(20, 172, 189, 0.3);
   background-color: var(--green);
   color: white;
 }
 
-.homepage {
-  display: grid;
-  justify-content: center;
-  padding-top: 50px;
+.homepage * {
+  text-decoration: none;
+}
+
+.homepage #short {
+  width: 140px;
+  height: 33px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.short-buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.homepage #long {
+  width: 300px;
+  height: 33px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 /*====================SIMPLE FORMS===================*/
