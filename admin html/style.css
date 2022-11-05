@@ -98,7 +98,6 @@ h3 {
 
 .form-button:hover {
   border: none;
-  background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
   box-shadow: 0px 5px 5px rgba(20, 172, 189, 0.3);
   background-color: var(--green);
   color: white;
@@ -197,7 +196,6 @@ h3 {
 
 .simple-form-button:hover {
   border: none;
-  background-image: linear-gradient(to right, var(--green) 0%, var(--blue) 100%);
   box-shadow: 0px 5px 20px rgba(20, 172, 189, 0.3);
   background-color: var(--green);
   color: white;
