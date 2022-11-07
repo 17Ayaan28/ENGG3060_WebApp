@@ -5,7 +5,7 @@
     </head>
     <body>
         {%for session in Sessions%}
-        <li>{{session}}</li>
+        <li><a href="/sessionperformance/{{session.id}}">{{session.session_datetime}}</li>
         {%endfor%}
     </body>
 </html>

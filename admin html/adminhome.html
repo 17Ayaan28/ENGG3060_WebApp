@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <title>Home</title>
+      <title>Home | HandsOn or ASULA or whatever</title>
       <link rel="icon" href="./logo.png">
       <link rel="stylesheet" href="./style.css">
     </head>
 
     <body>
-
-    <!--top bar-->
-    <div class="topnav">
+      <div class="topnav">
         <!--right side message-->
-      <div class="topnav-right">
-        <!--obviously change later depending on who's signed in-->
-        <h2>Currently signed in: Ross Black</h2>
+        <div id="message">
+          <p class="signedin" id="signedin">
+            <h2>Currently signed in: Ross Black</h2>
+          </p>
+        </div>
+
         <!--log out-->
         <a href="./logout.html" title="Logout"><img class="logout" src="./logout.png"></a>
       </div>
 
-    </div>
-
       <div class="homepage">
-        <a href="./assign.html"><button class="form-button" id="long">Assign or transfer</button></a>
-        <div class="short-buttons">
-          <a href="./addpatient.html"><button class="form-button" id="short" style="float:left;margin-left:50px">Add patient</button></a>
-          <a href="./addclinician.html"><button class="form-button" id="short" style="float:right; margin-right:50px;">Add clinician</button></a>
-        </div>
-        <a href=""><button class="form-button" id="long">View clinicians</button></a>
-        <a href=""><button class="form-button" id="long">View patients</button></a>
+        <a href=""><button class="form-button">Assign or transfer</button></a>
+        <a href=""><button class="form-button">Add patient</button></a><a href=""><button class="form-button">Add clinician</button></a><a href=""><button class="form-button">View clinicians</button></a><a href=""><button class="form-button">View patients</button></a>
       </div>
 
     </body>
