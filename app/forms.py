@@ -6,7 +6,7 @@ class LoginForm(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    submit = SubmitField("Log In")
 
 class admin_LoginForm(FlaskForm):
     id = StringField('ID', validators=[DataRequired()])
