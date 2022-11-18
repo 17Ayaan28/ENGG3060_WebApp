@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Home</title>
+      <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+
+    <body>
+
+    <!--top bar-->
+    <div class="topnav">
+        <!--right side message-->
+      <div class="topnav-right">
+        <!--obviously change later depending on who's signed in-->
+        <h2>Currently signed in: Ross Black</h2>
+        <!--log out-->
+        <a href="./logout.html" title="Logout"><img class="logout" src="../static/images/logout.png"></a>
+      </div>
+
+    </div>
+
+      <div class="homepage">
+        <a href="./assign"><button class="form-button" id="long">Assign or transfer</button></a>
+        <div class="short-buttons">
+          <a href="/createpatient"><button class="form-button" id="short" style="float:left;margin-left:50px">Add patient</button></a>
+          <a href="/createclinician"><button class="form-button" id="short" style="float:right; margin-right:50px;">Add clinician</button></a>
+        </div>
+        <a href=""><button class="form-button" id="long">View clinicians</button></a>
+        <a href="./viewpatient.html"><button class="form-button" id="long">View patients</button></a>
+      </div>
+
+    </body>
+
+</html>

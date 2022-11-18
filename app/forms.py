@@ -9,7 +9,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField("Log In")
 
 class admin_LoginForm(FlaskForm):
-    id = StringField('ID', validators=[DataRequired()])
+    first_name = StringField('First Name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign In')
 
@@ -18,9 +18,14 @@ class create_patient(FlaskForm):
     last_name = StringField('Last Name', validators=[DataRequired()])
     age = StringField('Age', validators=[DataRequired()])
     sex = StringField('Sex', validators=[DataRequired()])
+    condition = StringField('Condition', validators=[])
+    affected_hand = StringField('Affected Hand', validators=[])
+    dominant_hand = StringField('Dominant Hand', validators=[])
     clinician_id = StringField('Clinician ID', validators=[DataRequired()])
+    submit = SubmitField("Add New Patient")
 
 class create_clinician(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
-    password = StringField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    submit = SubmitField('Add New Clinician')

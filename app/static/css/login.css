@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, #e1f6ec, #bdf9dd);       
+    background: white;       
 }
 
 .container {
@@ -51,7 +51,7 @@ body {
 .screen__background__shape1 {
     height: 520px;
     width: 520px;
-    background: #FFF;   
+    background: rgb(248, 253, 245);   
     top: -50px;
     right: 120px;   
     border-radius: 0 72px 0 0;
@@ -93,6 +93,7 @@ body {
 .login__field {
     padding: 20px 0px;  
     position: relative; 
+    font-size: 20px;
 }
 
 .login__icon {
@@ -175,4 +176,10 @@ body {
 
 .social-login__icon:hover {
     transform: scale(1.5);  
+}
+
+#login_title {
+    position: relative;
+    top: 24%;
+    left: 3%;
 }

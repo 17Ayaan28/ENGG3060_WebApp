@@ -1,11 +1,42 @@
 <!doctype html>
-<html>
-    <head>
-        <title>Patient Progress</title>
-    </head>
+<article class="leaderboard">
+    <header>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/showPatients.css') }}">
+      
+        <g>
+          <g>
+          </g>
+        </g>
+        <g>
+          <g>
+            <path d="M327.941,121.658c-1.395-4.288-5.103-7.414-9.566-8.064l-35.758-5.196l-15.991-32.402
+              c-1.997-4.044-6.116-6.605-10.626-6.605c-4.511,0-8.63,2.561-10.626,6.605l-15.991,32.402l-35.758,5.196
+              c-4.464,0.648-8.172,3.775-9.566,8.065c-1.393,4.291-0.231,8.999,2.999,12.148l25.875,25.221l-6.109,35.613
+              c-0.763,4.446,1.064,8.938,4.714,11.59c3.648,2.651,8.487,3,12.479,0.902L256,190.32l31.982,16.813
+              c1.734,0.911,3.627,1.36,5.512,1.36c2.456,0,4.902-0.763,6.966-2.263c3.65-2.652,5.477-7.144,4.714-11.59l-6.109-35.613
+              l25.875-25.221C328.172,130.658,329.334,125.949,327.941,121.658z M278.064,146.405c-2.793,2.722-4.068,6.644-3.408,10.489
+              l3.102,18.09l-16.245-8.541c-1.725-0.908-3.62-1.36-5.514-1.36c-1.894,0-3.788,0.454-5.514,1.36l-16.245,8.541l3.102-18.09
+              c0.66-3.844-0.615-7.766-3.408-10.489l-13.141-12.81l18.162-2.64c3.859-0.56,7.196-2.985,8.922-6.482l8.123-16.458l8.122,16.458
+              c1.727,3.497,5.062,5.921,8.922,6.482l18.162,2.64L278.064,146.405z" />
+          </g>
+        </g>
+      </svg>
+  
+      <h1 class="leaderboard__title"><span class="leaderboard__title--top">BBT Session</span><span class="leaderboard__title--bottom">List</span></h1>
+    </header>
+    
+    <main class="leaderboard__profiles">
+
+    {%for session in Sessions%}
+      <article class="leaderboard__profile">
+        
+        <a href="/sessionperformance/{{session.session_starttime}}"><span class="leaderboard__name">{{session.session_starttime}}</span></a>
+        
+      </article>
+    {%endfor%}
+    <a href="/patientProgress/{{patient_id}}"><span class="leaderboard__name">See overall progress</span></a>
+    </main>
     <body>
-        {%for session in Sessions%}
-        <li><a href="/sessionperformance/{{session.id}}">{{session.session_datetime}}</li>
-        {%endfor%}
+      <a href="/logout"><img id="logout_img" src="{{ url_for('static', filename='images/logout.png') }}"></a>
     </body>
-</html>
+  </div>

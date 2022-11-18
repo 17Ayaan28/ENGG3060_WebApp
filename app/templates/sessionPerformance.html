@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <head>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>Patient Progress</title>
+    </head>
+    <body>
+        <h1 id="performance_title">BBT Performance</h1>
+
+        <br>
+        <h2 id="left_title">Left Hand Performance</h2>
+        <canvas id="leftChart" style="width: 600px; max-width: 1000px;"></canvas>
+        <br>
+
+        <h2 id="left_title">Right Hand Performance</h2>
+        <canvas id="rightChart" style="width: 600px; max-width: 1000px; position: absolute; top: 90%;"></canvas>
+        <br>
+        <br>
+        <br>
+        <script>
+        var xValues = {{ X_vals | tojson }};
+        var yValuesLeft = {{ left_ts | tojson }};
+        var yValuesRight = {{ right_ts | tojson }};
+        
+        new Chart("leftChart", {
+          type: "line",
+          
+          data: {
+            
+            labels: xValues,
+            datasets: [{
+              label: 'Timestamp',
+              fill: false,
+              lineTension: 0,
+              data: yValuesLeft,
+              backgroundColor: "#64C195",
+              borderColor: "#64C195",
+              pointBackgroundColor: "#64C195",
+              pointBorderColor: "#64C195"
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              yAxes: [{ticks: {min: 0, max:60, stepSize:5}}]
+            }
+          }
+        });
+
+        new Chart("rightChart", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              label: 'Timestamp',
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,1.0)",
+              borderColor: 'rgb(75, 192, 192)',
+              data: yValuesRight,
+              backgroundColor: 'rgb(75, 192, 192)'
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              yAxes: [{ticks: {min: 0, max:60, stepSize:5}}]
+            }
+          }
+        });
+
+        </script>
+    </body>
+</html>

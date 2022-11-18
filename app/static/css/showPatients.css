@@ -1,6 +1,10 @@
 .leaderboard {
-    max-width: 490px;
-    width: 100%;
+
+    width: 70%;
+    height: 600px;
+    color: white;
+    background: white;
+    background-color: white;
     border-radius: 12px;
 }
 .leaderboard header {
@@ -11,6 +15,7 @@
     position: relative;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
+
 }
 .leaderboard header .leaderboard__title {
     position: absolute;
@@ -21,9 +26,11 @@
     transform: translateY(-50%);
     text-transform: uppercase;
     margin: 0;
+
 }
 .leaderboard header .leaderboard__title span {
     display: block;
+    font-size: 40px;
 }
 .leaderboard header .leaderboard__title--top {
     font-size: 24px;
@@ -45,6 +52,7 @@
     top: 50%;
     left: var(--start);
     transform: translate(-50%, -50%);
+
 }
 .leaderboard__profiles {
     background-color: #fff;
@@ -104,4 +112,11 @@ body {
 }
 .leaderboard {
     box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
+}
+
+#logout_img {
+    position: absolute;
+    width: 40px;
+    top: 2%;
+    right: 5%;
 }

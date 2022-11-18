@@ -10,10 +10,13 @@
       <div class="homepage">
 
         <div style="text-align: center;">
-        <IMG SRC="{{ url_for('static', filename='images/logo.png') }}" Width = 150 Height = 150>
+        <IMG SRC="{{ url_for('static', filename='images/logo.png') }}" id="home_image">
+        <h1 id="home_title">HandsOn</h1>
         </div>
 
-        <a href="/login"><button class="form-button">Sign In</button></a>
+        <a href="/login" id="home_button1"><button class="form-button">Clinician Sign In</button></a>
+        <a href="/adminlogin" id="home_button2"><button class="form-button">Admin Sign In</button></a>
+
       </div>
 
     </body>

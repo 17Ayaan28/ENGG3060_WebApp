@@ -13,7 +13,7 @@ class Clinician(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.Text(), nullable=False)
     last_name = db.Column(db.Text(), nullable=False)
-    password_hash = db.Column(db.Text())
+    password_hash = db.Column(db.Text(), nullable=False)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -30,13 +30,30 @@ class Patient(db.Model):
     first_name = db.Column(db.Text(), nullable=False)
     last_name = db.Column(db.Text(), nullable=False)
     age = db.Column(db.Integer, nullable=False)
-    sex = db.Column(db.Text(), nullable=False,)
+    sex = db.Column(db.Text(), nullable=False)
+    condition = db.Column(db.Text(), nullable=True)
+    affected_hand = db.Column(db.Text(), nullable=True)
+    dominant_hand = db.Column(db.Text(), nullable=True)
     clinician_id = db.Column(db.Integer, db.ForeignKey("clinicians.id"), nullable=False)
+
+
+class Admin(db.Model):
+    __tablename__ = "admins"
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.Text(), nullable=False)
+    last_name = db.Column(db.Text(), nullable=False)
+    password_hash = db.Column(db.Text(), nullable=False)
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
 
 class Session(db.Model):
     __tablename__ = "sessions"
-    id = db.Column(db.Integer, primary_key=True)
-    session_datetime = db.Column(db.DateTime, nullable=False)
-    left_score = db.Column(db.Integer, nullable=False)
-    right_score = db.Column(db.Integer, nullable=False)
+    session_starttime = db.Column(db.DateTime, nullable=False, primary_key=True, default="now()")
+    total_block_count = db.Column(db.Integer, nullable=False)
+    block_timestamps = db.Column(db.Text(), nullable=False)
     patient_id = db.Column(db.Integer, db.ForeignKey("patients.id"), nullable=False)
+    patient_hand = db.Column(db.Text(),nullable=False)
