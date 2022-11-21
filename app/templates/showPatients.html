@@ -29,7 +29,7 @@
     {%for patient in patient_list%}
       <article class="leaderboard__profile">
         
-        <a href="/sessions/{{patient.id}}"><span class="leaderboard__name">{{patient.first_name}}</span></a>
+        <a href="/sessions/{{patient.id}}"><span class="leaderboard__name">{{patient.first_name}}      patient id: {{patient.id}}</span></a>
         
       </article>
     {%endfor%}

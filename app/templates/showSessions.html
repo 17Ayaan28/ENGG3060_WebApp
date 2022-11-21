@@ -30,11 +30,11 @@
     {%for session in Sessions%}
       <article class="leaderboard__profile">
         
-        <a href="/sessionperformance/{{session.session_starttime}}"><span class="leaderboard__name">{{session.session_starttime}}</span></a>
+        <a href="/sessionperformance/{{session.session_starttime}}"><span class="leaderboard__name">{{session.session_starttime}}        Hand: {{session.patient_hand }}</span></a>
         
       </article>
     {%endfor%}
-    <a href="/patientProgress/{{patient_id}}"><span class="leaderboard__name">See overall progress</span></a>
+    <article class="leaderboard__profile"><a href="/patientProgress/{{patient_id}}"><span class="leaderboard__name">See overall progress</span></a></article>
     </main>
     <body>
       <a href="/logout"><img id="logout_img" src="{{ url_for('static', filename='images/logout.png') }}"></a>

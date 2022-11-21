@@ -4,6 +4,12 @@
     <head>
         <link rel="stylesheet" href="../static/css/style.css">
         <title>Patient Progress</title>
+        <style>
+          .tg  {border-collapse:collapse;text-align: center;vertical-align:middle;border-width:1px;position: absolute;top: 170%;left: 5%;}
+          .tg td{border-color:black;border-style:solid;padding:10px 5px;border-width:1px}
+          .tg th{border-color:black;border-style:solid;padding:10px 5px;border-width:1px}
+          .tg thead{font-weight: bolder;border-width:1px}
+      </style>
     </head>
     <body>
         <h1 id="performance_title">Patient Progress</h1>
@@ -19,242 +25,480 @@
         <br>
         <br>
         <br>
+        <h2 id="left_title" style="position: absolute;top: 160%;">Normative Values</h2>
         <table class="tg">
           <thead>
               <tr>
-              <th class="tg-amwm">Age, yr</th>
-              <th class="tg-amwm">Hand</th>
-              <th class="tg-amwm">Mean</th>
-              <th class="tg-amwm">SD</th>
-              <th class="tg-amwm">SE</th>
-              <th class="tg-amwm">Low</th>
-              <th class="tg-amwm">High</th>
+              <th>Age, yr</th>
+              <th>Gender</th>
+              <th>Hand</th>
+              <th>Mean</th>
+              <th>SD</th>
+              <th>SE</th>
+              <th>Low</th>
+              <th>High</th>
               </tr>
           </thead>
           <tbody>
               <tr>
-              <td  rowspan="2">20-24</td>
-              <td >R</td>
-              <td >88.0</td>
-              <td >8.3</td>
-              <td >1.6</td>
-              <td >67</td>
-              <td >103</td>
+              <td rowspan="4">20-24</td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>88.2</td>
+              <td>8.8</td>
+              <td>1.6</td>
+              <td>70</td>
+              <td>105</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >83.4</td>
-              <td >7.9</td>
-              <td >1.6</td>
-              <td >66</td>
-              <td >99</td>
+              <td>L</td>
+              <td>86.4</td>
+              <td>8.5</td>
+              <td>1.6</td>
+              <td>70</td>
+              <td>102</td>
               </tr>
               <tr>
-              <td  rowspan="2">25-29</td>
-              <td >R</td>
-              <td >86.0</td>
-              <td >7.4</td>
-              <td >1.4</td>
-              <td >63</td>
-              <td >96</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>88.0</td>
+              <td>8.3</td>
+              <td>1.6</td>
+              <td>67</td>
+              <td>103</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >80.9</td>
-              <td >6.4</td>
-              <td >1.2</td>
-              <td >63</td>
-              <td >93</td>
+              <td>L</td>
+              <td>83.4</td>
+              <td>7.9</td>
+              <td>1.6</td>
+              <td>66</td>
+              <td>99</td>
               </tr>
               <tr>
-              <td  rowspan="2">30-34</td>
-              <td >R</td>
-              <td >85.2</td>
-              <td >7.4</td>
-              <td >1.5</td>
-              <td >75</td>
-              <td >101</td>
+              <td rowspan="4">25-29<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>85.0</td>
+              <td>7.5</td>
+              <td>1.4</td>
+              <td>71</td>
+              <td>95</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >80.2</td>
-              <td >5.6</td>
-              <td >1.1</td>
-              <td >66</td>
-              <td >92</td>
+              <td>L</td>
+              <td>84.1</td>
+              <td>7.1</td>
+              <td>1.4</td>
+              <td>69</td>
+              <td>100</td>
               </tr>
               <tr>
-              <td  rowspan="2">35-39</td>
-              <td >R</td>
-              <td >84.8</td>
-              <td >6.1</td>
-              <td >1.2</td>
-              <td >71</td>
-              <td >95</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>86.0</td>
+              <td>7.4</td>
+              <td>1.4</td>
+              <td>63</td>
+              <td>96</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >83.5</td>
-              <td >6.1</td>
-              <td >1.2</td>
-              <td >72</td>
-              <td >97</td>
+              <td>L</td>
+              <td>80.9</td>
+              <td>6.4</td>
+              <td>1.2</td>
+              <td>63</td>
+              <td>93</td>
               </tr>
               <tr>
-              <td  rowspan="2">40-44</td>
-              <td >R</td>
-              <td >81.1</td>
-              <td >8.2</td>
-              <td >1.5</td>
-              <td >60</td>
-              <td >97</td>
+              <td rowspan="4">30-34<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>81.9</td>
+              <td>9.0</td>
+              <td>1.7</td>
+              <td>68</td>
+              <td>96</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >79.7</td>
-              <td >8.8</td>
-              <td >1.6</td>
-              <td >57</td>
-              <td >97</td>
+              <td>L</td>
+              <td>81.3</td>
+              <td>8.1</td>
+              <td>1.6</td>
+              <td>69</td>
+              <td>99</td>
               </tr>
               <tr>
-              <td  rowspan="2">45-49</td>
-              <td >R</td>
-              <td >82.1</td>
-              <td >7.5</td>
-              <td >1.5</td>
-              <td >68</td>
-              <td >99</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>85.2</td>
+              <td>7.4</td>
+              <td>1.5</td>
+              <td>75</td>
+              <td>101</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >78.3</td>
-              <td >7.6</td>
-              <td >1.5</td>
-              <td >59</td>
-              <td >91</td>
+              <td>L</td>
+              <td>80.2</td>
+              <td>5.6</td>
+              <td>1.1</td>
+              <td>66</td>
+              <td>92</td>
               </tr>
               <tr>
-              <td  rowspan="2">50-54</td>
-              <td >R</td>
-              <td >77.7</td>
-              <td >10.7</td>
-              <td >2.1</td>
-              <td >57</td>
-              <td >98</td>
+              <td rowspan="4">35-39<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>81.9</td>
+              <td>9.5</td>
+              <td>1.9</td>
+              <td>64</td>
+              <td>104</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >74.3</td>
-              <td >9.9</td>
-              <td >2.0</td>
-              <td >53</td>
-              <td >93</td>
+              <td>L</td>
+              <td>79.8</td>
+              <td>9.7</td>
+              <td>1.9</td>
+              <td>56</td>
+              <td>97</td>
               </tr>
               <tr>
-              <td  rowspan="2">55-59</td>
-              <td >R</td>
-              <td >74.7</td>
-              <td >8.9</td>
-              <td >1.8</td>
-              <td >56</td>
-              <td >94</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>84.8</td>
+              <td>6.1</td>
+              <td>1.2</td>
+              <td>71</td>
+              <td>95</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >73.6</td>
-              <td >7.8</td>
-              <td >1.6</td>
-              <td >54</td>
-              <td >85</td>
+              <td>L</td>
+              <td>83.5</td>
+              <td>6.1</td>
+              <td>1.2</td>
+              <td>72</td>
+              <td>97</td>
               </tr>
               <tr>
-              <td  rowspan="2">60-64</td>
-              <td >R</td>
-              <td >76.1</td>
-              <td >6.9</td>
-              <td >1.4</td>
-              <td >63</td>
-              <td >95</td>
+              <td rowspan="4">40-44<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>83.0</td>
+              <td>8.1</td>
+              <td>1.6</td>
+              <td>69</td>
+              <td>101</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >73.6</td>
-              <td >6.4</td>
-              <td >1.4</td>
-              <td >62</td>
-              <td >86</td>
+              <td>L</td>
+              <td>80.0</td>
+              <td>8.8</td>
+              <td>1.7</td>
+              <td>59</td>
+              <td>93</td>
               </tr>
               <tr>
-              <td  rowspan="2">65-69</td>
-              <td >R</td>
-              <td >72.0</td>
-              <td >6.2</td>
-              <td >1.2</td>
-              <td >60</td>
-              <td >82</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>81.1</td>
+              <td>8.2</td>
+              <td>1.5</td>
+              <td>60</td>
+              <td>97</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >71.3</td>
-              <td >7.7</td>
-              <td >1.4</td>
-              <td >61</td>
-              <td >89</td>
+              <td>L</td>
+              <td>79.7</td>
+              <td>8.8</td>
+              <td>1.6</td>
+              <td>57</td>
+              <td>97</td>
               </tr>
               <tr>
-              <td  rowspan="2">70-74</td>
-              <td >R</td>
-              <td >68.6</td>
-              <td >7.0</td>
-              <td >1.3</td>
-              <td >53</td>
-              <td >80</td>
+              <td rowspan="4">45-49<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>76.9</td>
+              <td>9.2</td>
+              <td>1.7</td>
+              <td>61</td>
+              <td>93</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >68.3</td>
-              <td >7.0</td>
-              <td >1.3</td>
-              <td >51</td>
-              <td >81</td>
+              <td>L</td>
+              <td>75.8</td>
+              <td>7.8</td>
+              <td>1.5</td>
+              <td>60</td>
+              <td>88</td>
               </tr>
               <tr>
-              <td  rowspan="2">75+</td>
-              <td >R</td>
-              <td >65.0</td>
-              <td >7.1</td>
-              <td >1.4</td>
-              <td >52</td>
-              <td >79</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>82.1</td>
+              <td>7.5</td>
+              <td>1.5</td>
+              <td>68</td>
+              <td>99</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >63.6</td>
-              <td >7.4</td>
-              <td >1.5</td>
-              <td >51</td>
-              <td >81</td>
+              <td>L</td>
+              <td>78.3</td>
+              <td>7.6</td>
+              <td>1.5</td>
+              <td>59</td>
+              <td>91</td>
               </tr>
               <tr>
-              <td  rowspan="2">All female subjects</td>
-              <td >R</td>
-              <td >78.4</td>
-              <td >10.4</td>
-              <td >.58</td>
-              <td >52</td>
-              <td >103</td>
+              <td rowspan="4">50-54<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>79.0</td>
+              <td>9.7</td>
+              <td>1.9</td>
+              <td>62</td>
+              <td>106</td>
               </tr>
               <tr>
-              <td >L</td>
-              <td >75.8</td>
-              <td >9.5</td>
-              <td >.53</td>
-              <td >51</td>
-              <td >99</td>
+              <td>L</td>
+              <td>77.0</td>
+              <td>9.2</td>
+              <td>1.8</td>
+              <td>60</td>
+              <td>97</td>
               </tr>
               <tr>
-              <td colspan="7" style="text-align: left;">R, right; L, left.</td>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>77.7</td>
+              <td>10.7</td>
+              <td>2.1</td>
+              <td>57</td>
+              <td>98</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>74.3</td>
+              <td>9.9</td>
+              <td>2.0</td>
+              <td>53</td>
+              <td>93</td>
+              </tr>
+              <tr>
+              <td rowspan="4">55-59<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>75.2</td>
+              <td>11.9</td>
+              <td>2.6</td>
+              <td>45</td>
+              <td>97</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>73.8</td>
+              <td>10.5</td>
+              <td>2.3</td>
+              <td>43</td>
+              <td>94</td>
+              </tr>
+              <tr>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>74.7</td>
+              <td>8.9</td>
+              <td>1.8</td>
+              <td>56</td>
+              <td>94</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>73.6</td>
+              <td>7.8</td>
+              <td>1.6</td>
+              <td>54</td>
+              <td>85</td>
+              </tr>
+              <tr>
+              <td rowspan="4">60-64<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>71.3</td>
+              <td>8.8</td>
+              <td>1.8</td>
+              <td>52</td>
+              <td>84</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>70.5</td>
+              <td>8.1</td>
+              <td>1.6</td>
+              <td>47</td>
+              <td>82</td>
+              </tr>
+              <tr>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>76.1</td>
+              <td>6.9</td>
+              <td>1.4</td>
+              <td>63</td>
+              <td>95</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>73.6</td>
+              <td>6.4</td>
+              <td>1.4</td>
+              <td>62</td>
+              <td>86</td>
+              </tr>
+              <tr>
+              <td rowspan="4">65-69<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>68.4</td>
+              <td>7.1</td>
+              <td>1.4</td>
+              <td>55</td>
+              <td>80</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>67.4</td>
+              <td>7.8</td>
+              <td>1.5</td>
+              <td>48</td>
+              <td>86</td>
+              </tr>
+              <tr>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>72.0</td>
+              <td>6.2</td>
+              <td>1.2</td>
+              <td>60</td>
+              <td>82</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>71.3</td>
+              <td>7.7</td>
+              <td>1.4</td>
+              <td>61</td>
+              <td>89</td>
+              </tr>
+              <tr>
+              <td rowspan="4">70-74<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>66.3</td>
+              <td>9.2</td>
+              <td>1.8</td>
+              <td>50</td>
+              <td>86</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>64.3</td>
+              <td>9.8</td>
+              <td>1.9</td>
+              <td>45</td>
+              <td>84</td>
+              </tr>
+              <tr>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>68.6</td>
+              <td>7.0</td>
+              <td>1.3</td>
+              <td>53</td>
+              <td>80</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>68.3</td>
+              <td>7.0</td>
+              <td>1.3</td>
+              <td>51</td>
+              <td>81</td>
+              </tr>
+              <tr>
+              <td rowspan="4">75+<br></td>
+              <td rowspan="2">M</td>
+              <td>R</td>
+              <td>63.0</td>
+              <td>7.1</td>
+              <td>1.4</td>
+              <td>47</td>
+              <td>75</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>61.3</td>
+              <td>8.4</td>
+              <td>1.7</td>
+              <td>46</td>
+              <td>74</td>
+              </tr>
+              <tr>
+              <td rowspan="2">F</td>
+              <td>R</td>
+              <td>65.0</td>
+              <td>7.1</td>
+              <td>1.4</td>
+              <td>52</td>
+              <td>79</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>63.6</td>
+              <td>7.4</td>
+              <td>1.5</td>
+              <td>51</td>
+              <td>81</td>
+              </tr>
+              <tr>
+              <td colspan="2" rowspan="2" style="text-align:left;">All male subjects</td>
+              <td>R</td>
+              <td>76.9</td>
+              <td>11.6</td>
+              <td>.66</td>
+              <td>45</td>
+              <td>106</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>75.4</td>
+              <td>11.4</td>
+              <td>.65</td>
+              <td>43</td>
+              <td>102</td>
+              </tr>
+              <tr>
+              <td colspan="2" rowspan="2" style="text-align:left;">All female subjects</td>
+              <td>R</td>
+              <td>78.4</td>
+              <td>10.4</td>
+              <td>.58</td>
+              <td>52</td>
+              <td>103</td>
+              </tr>
+              <tr>
+              <td>L</td>
+              <td>75.8</td>
+              <td>9.5</td>
+              <td>.53</td>
+              <td>51</td>
+              <td>99</td>
+              </tr>
+              <tr>
+              <td colspan="8" style="text-align:left;">M, male; F, female.</td>
+              </tr>
+              <tr>
+              <td colspan="8" style="text-align:left;">R, right; L, left.</td>
               </tr>
           </tbody>
           </table>

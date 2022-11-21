@@ -8,23 +8,15 @@
 
   <body>
       <!--top bar-->
-      <div class="topnav">
-        <div class="topnav-left">
+      <a href="/logout"><img id="logout_img" src="{{ url_for('static', filename='images/logout.png') }}" style="position: absolute;width: 40px;top: 2%;right: 5%;"></a>
+      <!--top bar-->
+
           <!--back button-->
-          <a href="/adminhome.html" title="Home"><img class="back" src="../static/images/logo.png"></a>
+        <a href="./adminhome.html" title="Home"><IMG style="width:5%;left:2%;top:2%;position:absolute;" SRC="{{ url_for('static', filename='images/logo.png') }}"></a>
 
-          <!--page title-->
-          <h1>Add New Clinician</h1>
-        </div>
+        <!--page title-->
+        <h1 style="left:8%;position:absolute;">Add New Patient</h1>
 
-        <!--right side message-->
-        <div class="topnav-right">
-          <!--obviously change later depending on who's signed in-->
-          
-          <!--log out-->
-          <a href="/logout" title="Logout"><img class="logout" src="../static/images/logout.png"></a>
-        </div>
-      </div>
 
     <!--NEED TO ADD VALIDATION + FORM SUBMIT POST METHOD etc.-->
     <form class="simple-form" action="" method="post" novalidate>

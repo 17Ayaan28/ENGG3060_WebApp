@@ -476,6 +476,13 @@ h3 {
   left: 2%;
 }
 
+#right_title{
+  color: black;
+  position: absolute;
+  left: 2%;
+  top: 82%;
+}
+
 #home_image {
   position: absolute;
   height: 130px;
@@ -509,4 +516,11 @@ h3 {
   border-width: 1px;
   border-color: #64C195;
   border-radius: 5px;
+}
+
+#logout_img {
+  position: absolute;
+  width: 40px;
+  top: 2%;
+  right: 5%;
 }

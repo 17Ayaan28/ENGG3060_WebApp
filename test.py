@@ -3,7 +3,7 @@ from turtle import right
 from venv import create
 import psycopg2
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = "postgres://ogbfzoaaronfll:ecff3f409a340d77f10ac744e1a9bf17e8fc92c70785189375a3a9c0349c60bd@ec2-3-214-2-141.compute-1.amazonaws.com:5432/dbi0i183fng1ot"
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 #postgres://hquttncnerkymd:8eacdafdc5ccadddd5506d7a0887886b0c6460ffe0b419da730b9f95c6fbba6d@ec2-54-165-178-178.compute-1.amazonaws.com:5432/dbvmsf4nunrpal
@@ -119,12 +119,12 @@ def getSession():
 
     cur = conn.cursor()
 
-    getSessions = """select * from sessions where session_datetime = timestamp '2016-06-22 19:10:25'"""
+    getSessions = """delete from sessions where patient_id = '6'"""
     #d = ''
     cur.execute(getSessions)
-    record = cur.fetchall()
-    leftCount = record[1]
-    rightCount = record[2]
+    conn.commit()
+    cur.close()
+
 
 if __name__ == "__main__":
     getSession()

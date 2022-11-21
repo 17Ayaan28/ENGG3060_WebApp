@@ -37,31 +37,24 @@ def login():
 
 @app.route('/adminlogin', methods=['GET', 'POST'])
 def admin_login():
-    #print(session.get("admin"))
-    #var = app.config['ADMIN_LOGIN']
-    var = os.environ['admin_login']
-    print(var)
-    if (var == "1"):
-        return render_template('adminhome.html')
-    else:
-        form = admin_LoginForm()
-        if form.validate_on_submit():
-            admin = Admin.query.filter_by(first_name=form.first_name.data).first()
-            if admin is None or not admin.check_password(form.password.data):
-                flash('Invalid username or password')
-                return redirect(url_for('admin_login'))
-            os.environ["admin_login"] = "1"
-            return redirect(url_for('admin_home'))
-        return render_template('admin_login.html', form=form)
+
+    form = admin_LoginForm()
+
+    if form.validate_on_submit():
+        admin = Admin.query.filter_by(first_name=form.first_name.data).first()
+        if admin is None or not admin.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('admin_login'))
+        
+        return redirect(url_for('admin_home'))
+
+    return render_template('admin_login.html', form=form)
 
 @app.route('/adminhome')
 def admin_home():
-    var = os.environ['admin_login']
-    print(var)
-    if (var == "1"):
-        return render_template('adminhome.html')
-    else:
-        return redirect(url_for('admin_login'))
+
+    return render_template('adminhome.html')
+
 
 @login_required
 @app.route('/logout')
@@ -114,34 +107,26 @@ def showSessions(pid):
 @app.route('/sessionperformance/<starttime>') 
 def showSessionPerformance(starttime):
 
-    print(starttime)
-    left_session = Session.query.filter_by(session_starttime=starttime, patient_hand="left")
-    #right_session = Session.query.filter_by(session_starttime=starttime, patient_hand="right")
+    session = Session.query.filter_by(session_starttime=starttime)
 
-    if left_session == None:
+    if session == None:
         print("No records found")
-        left_timestamps = []
+        timestamps = []
     else:
-        left_str = left_session[0].block_timestamps
-        left_timestamps = left_str.split(",")
+        timestamp_str = session[0].block_timestamps
+        hand = session[0].patient_hand
+        timestamp_list = timestamp_str.split(",")
 
-    #if right_session == None:
-    #    print("No records found")
-    right_timestamps = []
-    #else:
-    
-        #right_str = right_session[0].block_timestamps
-        #right_timestamps = right_str.split(",")
+    num_blocks = len(timestamp_list)
+    block_count_list = []
 
-    ma = len(left_timestamps)
-    x_vals = []
     i = 1
-    while (i <= ma):
-        x_vals.append(i)
+    while (i <= num_blocks):
+        block_count_list.append(i)
         i = i + 1
 
 
-    return render_template('sessionPerformance.html', left_ts=left_timestamps, right_ts=right_timestamps, X_vals=x_vals) 
+    return render_template('sessionPerformance.html', timestamps=timestamp_list, X_vals=block_count_list, hand=hand) 
 
 
 @login_required
